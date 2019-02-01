@@ -8,8 +8,9 @@ let L = new Discord.RichEmbed()
 .addField("help", "Command List", true)
 .addField("ban <user> <reason>", "ban a folks!",true)
 .addField("kick <user> <reason>", "kick a folks!",true)
+.addField("announce", "type this command for more info", true)
 .addField("mute <user> <(number)s/m/h)", "mute a folks",true)
-.addField("warn <user> <reason>", "warn a folks")
+.addField("warn <user> <reason>", "warn a folks",true)
 .addField("warnlevel <user>", "check how many warns that user got.",true)
 message.channel.send(L);
 
