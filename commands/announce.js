@@ -5,7 +5,7 @@ exports.run = (bot, message, args) => {
 
      let L = message.guild.channels.find("name", "announcements");
     L.send('@everyone')
-     L.send(`args[0]`)
+     L.send(`${args[0]}`)
     
     
     };
