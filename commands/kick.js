@@ -3,9 +3,9 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("Incorrect Usage: e!kick <user> <reason>");
+    if(!kUser) return message.channel.send("Incorrect Usage: >kick <user> <reason>");
     let kReason = args.join(" ").slice(22);
-    if (!kReason) return message.channel.send("Incorrect Usage: a!kick <user> <reason>");
+    if (!kReason) return message.channel.send("Incorrect Usage: >kick <user> <reason>");
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("NO can do pal!");
     if(kUser.hasPermission("KICK_MEMBERS")) return message.channel.send("That person can't be kicked!");
 
