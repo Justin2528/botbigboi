@@ -69,7 +69,7 @@ bot.on("message", async message => {
 bot.on("ready", async () => {
 
     console.log(`${bot.user.username} is online!`);
-    bot.user.setActivity("e!help - EDGE");
+    bot.user.setActivity(">help - Luca");
 
 });
 
