@@ -23,7 +23,7 @@ fs.readdir("./commands/", (err, files) => {
     if(jsfile.length <= 0){
         console.log("Couldn't find commands.")
         return;
-    });
+    }
 
     jsfile.forEach((f, i) => {
         let props = require(`./commands/${f}`);
@@ -31,7 +31,8 @@ fs.readdir("./commands/", (err, files) => {
         bot.commands.set(props.help.name, props)
     
     });
-    
+
+});
     bot.on("roleCreate", async role => {
     let L = role.guild.channels.find("name", "staff-logs")
     L.send(`${role} is now alive! Woohoo! Well i like that name but idk just a role.`)
