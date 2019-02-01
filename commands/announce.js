@@ -7,7 +7,7 @@ exports.run = (bot, message, args) => {
     L.send(`@everyone ${message.content}`)
     
     
-    
+    )};
 exports.help = {
     name: "announce"
 
