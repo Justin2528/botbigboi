@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
 
     let tomute = message.guild.member(message.mentions.members.first()) || message.guild.members.get(args[0]);
-    if(!tomute) return message.reply("Incorrect Usage: e!mute <user> <(number)s/m/h");
+    if(!tomute) return message.reply("Incorrect Usage: >mute <user> <(number)s/m/h");
     if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
     let muterole = message.guild.roles.find(`name`, "muted");
     if(!muterole){
@@ -27,12 +27,12 @@ module.exports.run = async (bot, message, args) => {
     }
 
     let mutetime = args[1];
-    if(!mutetime) return message.reply("Incorrect Usage: a!mute <user> <(number)s/m/h");
+    if(!mutetime) return message.reply("Incorrect Usage: >!mute <user> <(number)s/m/h");
 
     await(tomute.addRole(muterole.id));
 
-    let kickChannel = message.guild.channels.find(`name`, "mod-logs");
-    if(!kickChannel) return message.channel.send("Can't find mod logs (mod-logs)");
+    let kickChannel = message.guild.channels.find(`name`, "staff-logs");
+    if(!kickChannel) return message.channel.send("Can't find mod logs (staff-logs)");
     kickChannel.send(`<@${tomute.id}> has been muted by <@${message.author.id}> for ${ms(mutetime)}`);
 
     setTimeout(function(){
