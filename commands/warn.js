@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   if(!wUser) return message.channel.send("Incorrect Usage: a!warn <user> <reason>");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("They waaaay too kewl");
   let reason = args.join(" ").slice(22);
-  if(!reason) return message.channel.send("Incorrect Usage: a!warn <user> <reason>");
+  if(!reason) return message.channel.send("Incorrect Usage: >warn <user> <reason>");
 
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
@@ -34,8 +34,8 @@ module.exports.run = async (bot, message, args) => {
   .addField("Number of Warnings", warns[wUser.id].warns)
   .addField("Reason", reason);
 
-  let warnchannel = message.guild.channels.find(`name`, "mod-logs");
-  if(!warnchannel) return message.reply("Couldn't find mod logs (mod-logs)");
+  let warnchannel = message.guild.channels.find(`name`, "staff-logs");
+  if(!warnchannel) return message.reply("Couldn't find mod logs (staff-logs)");
 
   warnchannel.send(warnEmbed);
 
