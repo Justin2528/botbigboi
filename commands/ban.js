@@ -5,9 +5,9 @@ module.exports.run = async (bot, message, args) => {
 
         
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send("Incorrect Usage: e!ban <user> <reason>");
+    if(!bUser) return message.channel.send("Incorrect Usage: >ban <user> <reason>");
     let bReason = args.join(" ").slice(22);
-    if (!bReason) return message.channel.send("Incorrect Usage: e!ban <user> <reason>");
+    if (!bReason) return message.channel.send("Incorrect Usage: >ban <user> <reason>");
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("NO can do pal!");
     if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("That person can't be kicked!");
 
