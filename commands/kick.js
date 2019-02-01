@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("Time", message.createdAt)
     .addField("Reason", kReason)
 
-    let kickChannel = message.guild.channels.find(`name`, "mod-logs");
-    if(!kickChannel) return message.channel.send("Can't find mod logs (mod-logs)");
+    let kickChannel = message.guild.channels.find(`name`, "staff-logs");
+    if(!kickChannel) return message.channel.send("Can't find mod logs (staff-logs)");
 
     message.guild.member(kUser).kick(kReason)
 
