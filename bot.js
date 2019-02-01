@@ -122,4 +122,4 @@ bot.on("channelDelete", async channel => {
     
 
     
-    bot.login(process.env.BOT_TOKEn);
+    bot.login(process.env.BOT_TOKEN);
