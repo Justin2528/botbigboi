@@ -51,3 +51,7 @@ exports.run = (client, message, args, ops) => {
     
 
 }
+exports.help = {
+    name: "announce"
+
+}
