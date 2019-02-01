@@ -20,7 +20,8 @@ fs.readdir("./commands/", (err, files) => {
     
     if(err) console.log(err);
 
-
+ let jsfile = files.filter(f => f.split(".").pop() === "js")
+    
     jsfile.forEach((f, i) => {
         let props = require(`./commands/${f}`);
         console.log(`${f} loaded!`);
