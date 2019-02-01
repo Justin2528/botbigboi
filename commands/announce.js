@@ -4,7 +4,8 @@ const Discord = require('discord.js');
 exports.run = (bot, message, args) => {
 
      let L = message.guild.channels.find("name", "announcements");
-    message.channel.send('@everyone ' + args[0])
+    L.send('@everyone')
+     L.send(`args[0]`)
     
     
     };
