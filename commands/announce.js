@@ -7,10 +7,10 @@ exports.run = (client, message, args, ops) => {
 
     if (!args[0]) {
 
-        const embed = new Discord.MessageEmbed()
+        const embed = new Discord.RichEmbed()
         .setColor(0x77B3D5)
         .setTitle('Infomation')
-        .setDescription(`**Usage: \`\`\`-announce embedTitle ${split} embedMsg ${split} msgName ${split} msgIcon ${split} embedColor \`\`\`**`);
+        .setDescription(`**Usage: \`\`\`>announce embedTitle ${split} embedMsg ${split} msgName ${split} msgIcon ${split} embedColor \`\`\`**`);
 
         return send(message.channel, embed, {
             name: 'Announce Command',
@@ -35,7 +35,7 @@ exports.run = (client, message, args, ops) => {
 
     message.delete();
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
     .setColor(options.embedColor)
     .setTitle(options.title)
 
