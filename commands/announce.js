@@ -1,15 +1,35 @@
-const send = require('quick.hook');
+
 const Discord = require('discord.js');
 
-exports.run = (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
+     
+     let e = message.guild.channels.find('name', 'announcements')
 
-     let L = message.guild.channels.find("name", "announcements");
-    L.send('@everyone')
-     L.send(`${args[0]}`)
-    
-    
-    };
+    let specifyembed = new Discord.RichEmbed()
+        .setColor(0xF55D5D)
+        .setDescription(`${message.author}, Please specify a word or message to embed.`)
+        .setTimestamp();
+
+    if (!args[0]) return message.channel.send(specifyembed);
+
+    let embedsay = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setAuthor(message.author.tag, message.author.avatarURL)
+        .setDescription(`${args[0]}`);
+
+    e.send(embedsay + '@everyone');
+};
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    permLevel: "User"
+};
+
 exports.help = {
-    name: "announce"
-
-}
+    name: "embed",
+    category: "Miscelaneous",
+    description: "Embed a message you want.",
+    usage: "embed"
+};
