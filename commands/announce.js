@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${args[0]}`);
 
-    e.send(embedsay + '@everyone');
+    e.send(embedsay);
 };
 
 exports.conf = {
