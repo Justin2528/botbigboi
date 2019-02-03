@@ -28,7 +28,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: "embed",
+    name: "announce",
     category: "Miscelaneous",
     description: "Embed a message you want.",
     usage: "embed"
