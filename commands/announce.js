@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[0]) return message.channel.send(specifyembed);
 
-    let embedsay = new Discord.MessageEmbed()
+    let embedsay = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${args[0]}`);
