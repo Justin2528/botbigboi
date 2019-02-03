@@ -69,6 +69,14 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return message.channel.send("Commands don't work in dm channel!");
 
+        let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+    if(!prefixes[message.guild.id]){
+      prefixes[message.guild.id] = {
+        prefixes: botconfig.prefix
+      };
+    }
+    let prefix = prefixes[message.guild.id].prefixes;
+    if(!message.content.startsWith(prefix)) return;
   
     if(!message.content.startsWith(prefix)) return;
     
@@ -76,7 +84,7 @@ bot.on("message", async message => {
    // if(!message.member.hasPermission("ADMINISTRATOR")){
 
 
-    
+
  
 
 
