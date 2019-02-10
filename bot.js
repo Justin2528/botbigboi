@@ -5,17 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const antispam = require("discord-anti-spam");
 
-antispam(bot, {
-    warnBuffer: 8, //Maximum amount of messages allowed to send in the interval time before getting warned.
-    maxBuffer: 12, // Maximum amount of messages allowed to send in the interval time before getting banned.
-    interval: 1000, // Amount of time in ms users can send a maximum of the maxBuffer variable before getting banned.
-    warningMessage: " [ ! ] WARNING, If you continue spamming you will be banned.", // Warning message send to the user indicating they are going to fast.
-    banMessage: " was banned for spamming. Don't test Luca bots anti spam. Would anyone else like a try?", // Ban message, always tags the banned user in front of it.
-    maxDuplicatesWarning: 8, // Maximum amount of duplicate messages a user can send in a timespan before getting warned
-    maxDuplicatesBan: 24, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
-    deleteMessagesAfterBanForPastDays: 7, // Delete the spammed messages after banning for the past x days.
-    exemptRoles: ["📡 | Admin", "⛔️ | Sr. Admin", "+", "-", "💎 | Manager", "👤 | Co-Owner", "💻| Developer", "💻 | Executive Manager", "👑 | Owner"] // Delete the spammed messages after banning for the past x days.
-});
+
 
 
 
